@@ -1,0 +1,29 @@
+Source: node-package-json
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends:
+ debhelper (>= 9)
+ , dh-buildinfo
+ , nodejs
+Standards-Version: 4.1.1
+Homepage: https://github.com/sindresorhus/package-json#readme
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-package-json.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-package-json.git
+
+Package: node-package-json
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , nodejs
+ , node-got (>= 6.7.1)
+ , node-registry-url (>= 3.0.3)
+ , node-semver (>= 5.1.0)
+ , node-registry-auth-token (>= 3.0.1)
+Description: Get metadata of a package from the npm registry
+ Both public and private registries are supported, for both scoped and unscoped
+ packages, as long as the registry uses either bearer tokens or basic
+ authentication.
+ .
+ Node.js is an event-based server-side JavaScript engine.
