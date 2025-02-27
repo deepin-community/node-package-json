@@ -1,4 +1,4 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: package-json
 Upstream-Contact: https://github.com/sindresorhus/package-json/issues
 Source: https://github.com/sindresorhus/package-json#readme
@@ -9,6 +9,10 @@ License: Expat
 
 Files: debian/*
 Copyright: 2017 Pirate Praveen <praveen@debian.org>
+License: Expat
+
+Files: debian/tests/test_modules/mock-private-registry/*
+Copyright: 2016 Espen Hovlandsdal
 License: Expat
 
 License: Expat
@@ -31,4 +35,3 @@ License: Expat
  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-
