@@ -3,24 +3,29 @@ Section: javascript
 Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Pirate Praveen <praveen@debian.org>
-Build-Depends:
- debhelper (>= 9)
- , dh-buildinfo
- , nodejs
-Standards-Version: 4.1.1
-Homepage: https://github.com/sindresorhus/package-json#readme
-Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-package-json.git
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-package-json.git
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , ava <!nocheck>
+ , node-got <!nocheck>
+ , node-pinkie-promise <!nocheck>
+ , node-registry-auth-token (>= 5) <!nocheck>
+ , node-registry-url <!nocheck>
+ , node-semver <!nocheck>
+Standards-Version: 4.6.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-package-json
+Vcs-Git: https://salsa.debian.org/js-team/node-package-json.git
+Homepage: https://github.com/sindresorhus/package-json
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
 
 Package: node-package-json
 Architecture: all
-Depends:
- ${misc:Depends}
- , nodejs
- , node-got (>= 6.7.1)
- , node-registry-url (>= 3.0.3)
- , node-semver (>= 5.1.0)
- , node-registry-auth-token (>= 3.0.1)
+Depends: ${misc:Depends}
+ , node-got
+ , node-registry-auth-token (>= 5)
+ , node-registry-url
+ , node-semver
+Breaks: node-latest-version (<< 7)
 Description: Get metadata of a package from the npm registry
  Both public and private registries are supported, for both scoped and unscoped
  packages, as long as the registry uses either bearer tokens or basic
